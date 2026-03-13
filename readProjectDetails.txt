@@ -1,0 +1,26 @@
+   
+
+   >>>student register ( student record system)
+     course cover (unit-4 + 5)
+            -> session. ........
+            -> cookies
+            -> form validation
+            -> form handling
+            -> error handling
+            -> login authentication 
+            -> CREATE,READ,UPADE,DELETE (SQL)crud.  10(long)
+            -> CMS site 
+
+project Details 
+
+       (Student mangement system )
+         Database desing 
+            DB name :  school
+            Table:
+               student (id,name,address,photo);
+               user ( id , username, role,password,status)
+               course ( course_id,course_name)
+               .........................................
+               
+
+                
