@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION['username'])){
+    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +14,7 @@
 </head>
 <body>
      <h2>Admin Dashboard</h2>
-
-      <button > Add new Record  </button>
-
+      <a href="createStudent.php"><button > Add new Record  </button> </a>
       <table border="2">
         <tr>    
             <th>SN</th>
@@ -30,3 +35,7 @@
          
 </body>
 </html>
+
+<?php }else{
+    header("Location:index.php");
+} ?>

@@ -1,29 +1,12 @@
 <?php 
 if(isset($_POST['upload'])){
-  
-  // image (jpg)
-  //size 2mb
-
     $filename = $_FILES['image']['name'];
-
     $filePath = $_FILES['image']['tmp_name'];
-
-
-
-    // echo $filename;
-    // echo "<br>";
-    // echo $filePath;
-    // die;
-
     if(move_uploaded_file($filePath,"images/".$filename)){
         echo "<h2>File uploaded </h2>";
     }
 
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,26 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    header("Location:dashboard.php");
+}else{
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+$con = mysqli_connect("localhost","root","root","collegeDMC");
+$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+if(mysqli_query($con,$sql)){
+    $_SESSION['username'] = $username;
+    header("Location:dashboard.php");
+}
+
+mysqli_close($con);
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,3 +42,4 @@
     </form>
 </body>
 </html>
+<?php } ?>
