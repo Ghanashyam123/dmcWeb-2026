@@ -37,8 +37,8 @@ if(isset($_SESSION['username'])){
             <td><?php echo $row['address'];?> </td>
             <td><img src="images/<?php echo $row['image'];?>" width="100" height="100" /></td>
             <td>
-                <button>Edit </button>
-                <button>Delete</button>
+                <a href="edit.php?id=<?php echo $row['id']; ?>"><button>Edit</button></a>    
+                <a href="delete.php?id=<?php echo $row['id']; ?>"><button>Delete</button></a>
             </td>
         </tr>
 
