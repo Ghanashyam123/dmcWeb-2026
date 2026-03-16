@@ -8,7 +8,7 @@
 
     move_uploaded_file($filePath,"images/".$img);
 $con = mysqli_connect("localhost","root","root","collegeDMC");
-$sql = "INSERT INTO students ";
+$sql = "INSERT INTO students(stname,address,image) VALUES('$stname','$address','$img')";
 if(mysqli_query($con,$sql)){
     $_SESSION['username'] = $username;
     header("Location:dashboard.php");

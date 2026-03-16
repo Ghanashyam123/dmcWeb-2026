@@ -1,6 +1,10 @@
 <?php 
 session_start();
 if(isset($_SESSION['username'])){
+    $con = mysqli_connect("localhost","root","root","collegeDMC");
+    $sql = "SELECT * FROM students";
+    $res = mysqli_query($con,$sql);
+    
     ?>
 
 
@@ -20,17 +24,25 @@ if(isset($_SESSION['username'])){
             <th>SN</th>
             <th>student's name </th>
             <th> address </th>
+            <th>image</th>
             <th>Action </th>
         </tr>
+        <?php 
+
+        while($row=mysqli_fetch_assoc($res)){
+            ?>
         <tr>
-            <td>1</td>
-            <td>Sita karki </td>
-            <td>KTM </td>
+            <td><?php echo $row['id'];?></td>
+            <td><?php echo $row['stname'];?> </td>
+            <td><?php echo $row['address'];?> </td>
+            <td><img src="images/<?php echo $row['image'];?>" width="100" height="100" /></td>
             <td>
                 <button>Edit </button>
                 <button>Delete</button>
             </td>
         </tr>
+
+        <?php } ?>
       </table>
          
 </body>
